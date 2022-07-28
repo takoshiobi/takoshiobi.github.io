@@ -1,5 +1,7 @@
 # Compiling Spark code using Apache Zeppelin in Docker
 
+
+
 # Problem
 
 If you pulled Docker image of Apache Spark like this:
@@ -80,6 +82,8 @@ or
 
 This means that Zeppelin starts the interpreter in a different process and having difficulties  connecting to this process using Thrift Protocol or simply failed to start the interpreter process. This might happen for many reasons and one of them is incorrectly set `$SPARK_HOME` path variable.
 
+
+
 # Solution
 
 The easy fix for the issue described above:
@@ -93,8 +97,10 @@ Now try to compile spark code. The first compilation might take long time but th
 
 ![Success1](./assets/img/zeppelin_error_2.png)
 
-# How it works
 
+	
+# How it works
+	
 This manipulation probably redefines some spark properties that are necessary to run the interpreter by making request to spark interpreter API. If you look at log of the container you can find the following line:
 
 `INFO [2022-07-27 21:46:02,791] ({qtp230528013-28} InterpreterRestApi.java[updateSetting]:156) - Update interpreterSetting spark`
