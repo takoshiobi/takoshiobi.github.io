@@ -76,7 +76,7 @@ or
 
 `org.apache.thrift.transport.TTransportException: java.net.ConnectException: Connection refused at`
 
-![Снимок экрана 2022-07-28 в 00.42.18.png](Compiling%20Spark%20code%20using%20Apache%20Zeppelin%20in%20Dock%20f52c6437d835479f8de122fd6853284a/__2022-07-28__00.42.18.png)
+![Error1](./assets/img/zeppelin_error_1.png)
 
 This means that Zeppelin starts the interpreter in a different process and having difficulties  connecting to this process using Thrift Protocol or simply failed to start the interpreter process. This might happen for many reasons and one of them is incorrectly set `$SPARK_HOME` path variable.
 
@@ -91,7 +91,7 @@ The easy fix for the issue described above:
 
 Now try to compile spark code. The first compilation might take long time but the next one is going to work faster. 
 
-![Снимок экрана 2022-07-28 в 00.51.19.png](Compiling%20Spark%20code%20using%20Apache%20Zeppelin%20in%20Dock%20f52c6437d835479f8de122fd6853284a/__2022-07-28__00.51.19.png)
+![Success1](./assets/img/zeppelin_error_2.png)
 
 # How it works
 
